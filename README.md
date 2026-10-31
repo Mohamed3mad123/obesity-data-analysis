@@ -1,3 +1,11 @@
+![DEPILogo](DEPILogo.png)
+
+**التراك:** Professional Data Analyst  
+**الجروب:** CLS GIZ5_DAT3_G1  
+**نوع المشروع:** الفينال بروجكت  
+
+---
+
 # Obesity Data Analysis
 
 ## Project Overview
