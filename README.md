@@ -12,11 +12,11 @@
 <p align="center">
   <b>Team Members</b><br>
   <b>Mohamed Emad Hamdy</b> <sub>(Team Leader)</sub> &nbsp;|&nbsp; 
-  <b>Fairouz</b> &nbsp;|&nbsp; 
-  <b>Eslam</b> &nbsp;|&nbsp; 
-  <b>Injy</b> &nbsp;|&nbsp; 
-  <b>Rahma Sayed</b> &nbsp;|&nbsp; 
-  <b>Zeinab</b>
+  <b>Fayza Mohey El-Dein Mohamed</b> &nbsp;|&nbsp; 
+  <b>Rahma Sayed Mahmoud</b> &nbsp;|&nbsp; 
+  <b>Engy Samy Aboubakr</b> &nbsp;|&nbsp; 
+  <b>Eslam Houssny Mohamed</b> &nbsp;|&nbsp; 
+  <b>Zeinab Adel Mohamed</b>
 </p>
 
 ---
