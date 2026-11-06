@@ -3,6 +3,12 @@
 </p>
 
 <p align="center">
+  <a href="SYSTEM_ANALYSIS_README.md">
+    <img src="https://img.shields.io/badge/📖_View_System_Analysis_&_Design-Click_Here-2E86C1?style=for-the-badge" alt="System Analysis Documentation">
+  </a>
+</p>
+
+<p align="center">
   <b>Track:</b> Professional Data Analyst &nbsp;|&nbsp; 
   <b>Group:</b> CLS GIZ5_DAT3_G1 &nbsp;|&nbsp; 
   <b>Team:</b> Team 1 &nbsp;|&nbsp; 
@@ -65,7 +71,8 @@ The project plans to investigate the following indicators, subject to data avail
 6. Interpretation of findings and recommendations
 
 ## <span style="color: #2E86C1;">Repository Contents</span>
-- [`ObesityDocument.pdf`](ObesityDocument.pdf) — Project documentation, planning, literature review, and requirements gathering.
+- [`System Analysis & Design.pdf`](System%20Analysis%20&%20Design.pdf) — Project documentation, planning, literature review, and requirements gathering.
+- [`SYSTEM_ANALYSIS_README.md`](SYSTEM_ANALYSIS_README.md) — Detailed system analysis and database design documentation derived from the project PDF.
 
 Additional folders and deliverables will be added as the project progresses.
 
