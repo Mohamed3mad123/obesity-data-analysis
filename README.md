@@ -64,15 +64,14 @@ The project plans to investigate the following indicators, subject to data avail
 
 ## <span style="color: #2E86C1;">Project Workflow</span>
 1. Data collection and source verification
-2. Data cleaning and preparation
+​2. Data cleaning and preparation
 3. Exploratory data analysis
 4. SQL-based analysis
 5. Visualization and dashboard development
 6. Interpretation of findings and recommendations
 
 ## <span style="color: #2E86C1;">Repository Contents</span>
-- [`System Analysis & Design.pdf`](System%20Analysis%20&%20Design.pdf) — Project documentation, planning, literature review, and requirements gathering.
-- [`SYSTEM_ANALYSIS_README.md`](SYSTEM_ANALYSIS_README.md) — Detailed system analysis and database design documentation derived from the project PDF.
+- [`System Analysis & Design.pdf`](System%20Analysis%20&%20Design.pdf) / [`SYSTEM_ANALYSIS_README.md`](SYSTEM_ANALYSIS_README.md) — Comprehensive system analysis, database design, and project documentation (available in both PDF and Markdown formats).
 
 Additional folders and deliverables will be added as the project progresses.
 
