@@ -10,7 +10,7 @@
 
 <!-- Workflow Navigation Bar -->
 <p align="center">
-  <a href="#1-raw-data-folder">
+  <a href="Row%20Data/ROW_DATA_README.md">
     <img src="https://img.shields.io/badge/1._Raw_Data-Completed_(View)-27AE60?style=for-the-badge" alt="Raw Data">
   </a> &nbsp;
   <a href="PYTHON_README.md">
@@ -110,11 +110,7 @@ Developed as part of the **DEPI Professional Data Analytics Track**.
 > **Quick Status Summary:** Raw data collection and Python data cleaning are completed. Database and dashboard development are currently in progress.
 
 * **1. Raw Data (Completed ✅):** 
-  - Contains the initial unprocessed datasets. You can visit the [Row Data Folder](./Row%20Data) to access:
-    - `Diabetes Dataset – NCD-RisC.csv`
-    - `Obesity Dataset – NCD-RisC.csv`
-    - `Physical Inactivity.csv`
-    - `economic_health_indicators_egypt_japan_usa_2000_2022.csv`
+  - Contains the initial unprocessed datasets. You can check the detailed documentation and files via [Row Data Documentation (Row Data/ROW_DATA_README.md)](Row%20Data/ROW_DATA_README.md) or explore the [Row Data Folder](./Row%20Data).
 
 * **2. Python Cleaning (Completed ✅):** 
   - Data has been preprocessed and cleaned. Review the full details and scripts via [Python Documentation (PYTHON_README.md)](PYTHON_README.md).
