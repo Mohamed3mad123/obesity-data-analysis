@@ -6,6 +6,10 @@
   <a href="SYSTEM_ANALYSIS_README.md">
     <img src="https://img.shields.io/badge/📖_View_System_Analysis_%26_Design-Click_Here-2E86C1?style=flat-square&logo=gitbook&logoColor=white" alt="System Analysis Documentation">
   </a>
+  &nbsp;&nbsp;
+  <a href="https://your-website-url.com" target="_blank">
+    <img src="https://img.shields.io/badge/🌐_Visit_Project_Website-Click_Here-8E44AD?style=flat-square&logo=internet-explorer&logoColor=white" alt="Project Website">
+  </a>
 </p>
 
 <!-- Animated Workflow Navigation Bar -->
@@ -95,31 +99,4 @@ The project plans to investigate the following indicators, subject to data avail
 ## <span style="color: #2E86C1;">Repository Contents</span>
 - [`System Analysis & Design.pdf`](System%20Analysis%20&%20Design.pdf) / [`SYSTEM_ANALYSIS_README.md`](SYSTEM_ANALYSIS_README.md) — Comprehensive system analysis, database design, and project documentation (available in both PDF and Markdown formats).
 
-Additional folders and deliverables will be added as the project progresses.
-
-## <span style="color: #2E86C1;">Important Note</span>
-This project focuses on descriptive analysis and associations between indicators. Observed relationships will not be interpreted as proof of causation.
-
-## <span style="color: #2E86C1;">Team Project</span>
-Developed as part of the **DEPI Professional Data Analytics Track**.
-
-> **Project status:** *In progress.*
-
----
-
-<!-- Workflow Summary & Links Added at the bottom -->
-## <span style="color: #2E86C1;">📌 Workflow Summary & Stage Details</span>
-
-> **Quick Status Summary:** Raw data collection and Python data cleaning are completed. Database and dashboard development are currently in progress.
-
-* **1. Raw Data (Completed ✅):** 
-  - Contains the initial unprocessed datasets. You can check the detailed documentation and files via [Row Data Documentation (Row Data/ROW_DATA_README.md)](Row%20Data/ROW_DATA_README.md).
-
-* **2. Python Cleaning (Completed ✅):** 
-  - Data has been preprocessed and cleaned. Review the full details and scripts via [Python Documentation (PYTHON_README.md)](PYTHON_README.md).
-
-* **3. SQL & Database (In Progress ⏳):** 
-  - Building database schemas, DDL/DML scripts, and relational queries. Check out [SQL Documentation (SQL_README.md)](SQL_README.md).
-
-* **4. Dashboards - Power BI & Tableau (Pending ⏳):** 
-  - Interactive reports and data storytelling dashboards. Follow updates via [Dashboards Documentation (DASHBOARD_README.md)](DASHBOARD_README.md).
+Additional folders and deliverables will be added
