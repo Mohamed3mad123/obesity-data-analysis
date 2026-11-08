@@ -1,30 +1,33 @@
 <p align="center">
-  <img src="DEPILogo.png" alt="DEPI Logo" width="180">
+  <img src="DEPILogo.png" alt="DEPI Logo" width="150" style="border-radius: 10px; transition: transform 0.3s ease;" hspace="5">
 </p>
 
 <p align="center">
   <a href="SYSTEM_ANALYSIS_README.md">
-    <img src="https://img.shields.io/badge/📖_View_System_Analysis_&_Design-Click_Here-2E86C1?style=for-the-badge" alt="System Analysis Documentation">
+    <img src="https://img.shields.io/badge/📖_View_System_Analysis_%26_Design-Click_Here-2E86C1?style=flat-square&logo=gitbook&logoColor=white" alt="System Analysis Documentation">
   </a>
 </p>
 
-<!-- Workflow Navigation Bar -->
+<!-- Animated Workflow Navigation Bar -->
 <p align="center">
-  <a href="ROW_DATA_README.md">
-    <img src="https://img.shields.io/badge/1._Raw_Data-Completed_(View)-27AE60?style=for-the-badge" alt="Raw Data">
-  </a> &nbsp;
+  <a href="Row%20Data/ROW_DATA_README.md">
+    <img src="https://img.shields.io/badge/1._Raw_Data-Done-27AE60?style=for-the-badge&logo=databricks&logoColor=white" alt="Raw Data">
+  </a> 
+  &nbsp;<b>➔</b>&nbsp;
   <a href="PYTHON_README.md">
-    <img src="https://img.shields.io/badge/2._Python_Cleaning-Completed_(Details)-27AE60?style=for-the-badge" alt="Python Cleaning">
-  </a> &nbsp;
+    <img src="https://img.shields.io/badge/2._Python-Done-27AE60?style=for-the-badge&logo=python&logoColor=white" alt="Python Cleaning">
+  </a> 
+  &nbsp;<b>➔</b>&nbsp;
   <a href="SQL_README.md">
-    <img src="https://img.shields.io/badge/3._SQL_%26_Database-In_Progress-F39C12?style=for-the-badge" alt="SQL Database">
-  </a> &nbsp;
+    <img src="https://img.shields.io/badge/3._SQL-In_Progress-F39C12?style=for-the-badge&logo=postgresql&logoColor=white" alt="SQL Database">
+  </a> 
+  &nbsp;<b>➔</b>&nbsp;
   <a href="DASHBOARD_README.md">
-    <img src="https://img.shields.io/badge/4._Dashboards-Pending-7F8C8D?style=for-the-badge" alt="Dashboards">
+    <img src="https://img.shields.io/badge/4._Dashboards-Pending-7F8C8D?style=for-the-badge&logo=powerbi&logoColor=white" alt="Dashboards">
   </a>
 </p>
 <p align="center">
-  <sub><i>💡 Click any workflow stage above to jump to its files or dedicated documentation details. Current Status: Only Raw Data & Python are completed.</i></sub>
+  <sub><i>⚡ Click any workflow stage above to navigate through project milestones. Status: Raw Data & Python are completed. 🚀</i></sub>
 </p>
 
 <p align="center">
@@ -110,8 +113,8 @@ Developed as part of the **DEPI Professional Data Analytics Track**.
 > **Quick Status Summary:** Raw data collection and Python data cleaning are completed. Database and dashboard development are currently in progress.
 
 * **1. Raw Data (Completed ✅):** 
-  - Contains the initial unprocessed datasets. You can check the detailed documentation and files via [Row Data Documentation (Row Data/ROW_DATA_README.md)](ROW_DATA_README.md) .
-  
+  - Contains the initial unprocessed datasets. You can check the detailed documentation and files via [Row Data Documentation (Row Data/ROW_DATA_README.md)](Row%20Data/ROW_DATA_README.md).
+
 * **2. Python Cleaning (Completed ✅):** 
   - Data has been preprocessed and cleaned. Review the full details and scripts via [Python Documentation (PYTHON_README.md)](PYTHON_README.md).
 
