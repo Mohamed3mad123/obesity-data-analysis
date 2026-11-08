@@ -8,7 +8,7 @@
   </a>
 </p>
 
-<!-- Workflow Navigation Bar (Added at the top) -->
+<!-- Workflow Navigation Bar -->
 <p align="center">
   <a href="#1-raw-data-folder">
     <img src="https://img.shields.io/badge/1._Raw_Data-Completed_(View)-27AE60?style=for-the-badge" alt="Raw Data">
@@ -107,20 +107,20 @@ Developed as part of the **DEPI Professional Data Analytics Track**.
 <!-- Workflow Summary & Links Added at the bottom -->
 ## <span style="color: #2E86C1;">📌 Workflow Summary & Stage Details</span>
 
-> **ملخص سريع لحالة العمل:** تم الانتهاء من جمع الرو داتا وتنظيفها بالبايثون، وجاري العمل على قواعد البيانات والداشبورد.
+> **Quick Status Summary:** Raw data collection and Python data cleaning are completed. Database and dashboard development are currently in progress.
 
-* **1. Raw Data (مكتمل ✅):** 
-  - يحتوي على الملفات الأصلية غير المجرّدة. يمكنك زيارة مجلد [Row Data Folder](./Row%20Data) للاطلاع على:
+* **1. Raw Data (Completed ✅):** 
+  - Contains the initial unprocessed datasets. You can visit the [Row Data Folder](./Row%20Data) to access:
     - `Diabetes Dataset – NCD-RisC.csv`
     - `Obesity Dataset – NCD-RisC.csv`
     - `Physical Inactivity.csv`
     - `economic_health_indicators_egypt_japan_usa_2000_2022.csv`
 
-* **2. Python Cleaning (مكتمل ✅):** 
-  - تم معالجة البيانات وتنظيفها. يمكنك مراجعة التفاصيل والسكربتات عبر الانتقال إلى صفحة [Python Documentation (PYTHON_README.md)](PYTHON_README.md).
+* **2. Python Cleaning (Completed ✅):** 
+  - Data has been preprocessed and cleaned. Review the full details and scripts via [Python Documentation (PYTHON_README.md)](PYTHON_README.md).
 
-* **3. SQL & Database (قيد العمل ⏳):** 
-  - جارِ بناء الجداول والـ Schema وعمل الـ Queries. لمعرفة تفاصيل هيكل قاعدة البيانات، تابع [SQL Documentation (SQL_README.md)](SQL_README.md).
+* **3. SQL & Database (In Progress ⏳):** 
+  - Building database schemas, DDL/DML scripts, and relational queries. Check out [SQL Documentation (SQL_README.md)](SQL_README.md).
 
-* **4. Dashboards - Power BI & Tableau (قادم ⏳):** 
-  - التقارير التفاعلية والقصص البصرية. تابع التحديثات عبر [Dashboards Documentation (DASHBOARD_README.md)](DASHBOARD_README.md).
+* **4. Dashboards - Power BI & Tableau (Pending ⏳):** 
+  - Interactive reports and data storytelling dashboards. Follow updates via [Dashboards Documentation (DASHBOARD_README.md)](DASHBOARD_README.md).
