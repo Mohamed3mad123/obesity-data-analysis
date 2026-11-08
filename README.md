@@ -8,23 +8,23 @@
   </a>
 </p>
 
-<!-- Workflow Navigation Bar -->
+<!-- Workflow Navigation Bar (Added at the top) -->
 <p align="center">
-  <a href="#1-raw-data-✅-completed">
-    <img src="https://img.shields.io/badge/1._Raw_Data-Completed-27AE60?style=for-the-badge" alt="Raw Data">
+  <a href="#1-raw-data-folder">
+    <img src="https://img.shields.io/badge/1._Raw_Data-Completed_(View)-27AE60?style=for-the-badge" alt="Raw Data">
   </a> &nbsp;
-  <a href="#2-python-cleaning--preprocessing-✅-completed">
-    <img src="https://img.shields.io/badge/2._Python_Cleaning-Completed-27AE60?style=for-the-badge" alt="Python Cleaning">
+  <a href="PYTHON_README.md">
+    <img src="https://img.shields.io/badge/2._Python_Cleaning-Completed_(Details)-27AE60?style=for-the-badge" alt="Python Cleaning">
   </a> &nbsp;
-  <a href="#3-sql--database-⏳-in-progress">
+  <a href="SQL_README.md">
     <img src="https://img.shields.io/badge/3._SQL_%26_Database-In_Progress-F39C12?style=for-the-badge" alt="SQL Database">
   </a> &nbsp;
-  <a href="#4-power-bi--tableau-dashboards-⏳-pending">
+  <a href="DASHBOARD_README.md">
     <img src="https://img.shields.io/badge/4._Dashboards-Pending-7F8C8D?style=for-the-badge" alt="Dashboards">
   </a>
 </p>
 <p align="center">
-  <sub><i>💡 Click any workflow stage above to jump directly to its details and links below. Current Status: Only Raw Data & Python Cleaning are completed.</i></sub>
+  <sub><i>💡 Click any workflow stage above to jump to its files or dedicated documentation details. Current Status: Only Raw Data & Python are completed.</i></sub>
 </p>
 
 <p align="center">
@@ -94,34 +94,6 @@ The project plans to investigate the following indicators, subject to data avail
 
 Additional folders and deliverables will be added as the project progresses.
 
----
-
-## <span style="color: #2E86C1;">Project Workflow & Deliverables Status</span>
-
-> **Note:** *Only Raw Data and Python Cleaning stages are completed. The remaining stages are currently in progress.*
-
-### <span style="color: #2E86C1;">1. Raw Data ✅ (Completed)</span>
-Contains the initial unprocessed datasets used for the analysis.
-- 📁 [Row Data Folder](./Row%20Data)
-  - [`Diabetes Dataset – NCD-RisC.csv](./Row%20Data/Diabetes%20Dataset%20–%20NCD-RisC.csv)
-  - [`Obesity Dataset – NCD-RisC.csv](./Row%20Data/Obesity%20Dataset%20–%20NCD-RisC.csv)
-  - [`Physical Inactivity.csv](./Row%20Data/Physical%20Inactivity.csv)
-  - [`economic_health_indicators_egypt_japan_usa_2000_2022.csv](./Row%20Data/economic_health_indicators_egypt_japan_usa_2000_2022.csv)
-
-### <span style="color: #2E86C1;">2. Python Cleaning & Preprocessing ✅ (Completed)</span>
-Data transformation, handling missing values, and structuring datasets using Pandas and NumPy.
-- 📜 Python Script: *Coming soon* (Will link to the cleaning script/notebook once uploaded).
-
-### <span style="color: #2E86C1;">3. SQL & Database ⏳ (In Progress)</span>
-Database schema creation, DDL/DML scripts, and relational queries in SQL Server.
-- 🗄️ Database Scripts: *In progress*
-
-### <span style="color: #48C9B0;">4. Power BI & Tableau Dashboards ⏳ (Pending)</span>
-Interactive visual reports and storytelling dashboards.
-- 📊 Dashboards: *Pending*
-
----
-
 ## <span style="color: #2E86C1;">Important Note</span>
 This project focuses on descriptive analysis and associations between indicators. Observed relationships will not be interpreted as proof of causation.
 
@@ -129,3 +101,26 @@ This project focuses on descriptive analysis and associations between indicators
 Developed as part of the **DEPI Professional Data Analytics Track**.
 
 > **Project status:** *In progress.*
+
+---
+
+<!-- Workflow Summary & Links Added at the bottom -->
+## <span style="color: #2E86C1;">📌 Workflow Summary & Stage Details</span>
+
+> **ملخص سريع لحالة العمل:** تم الانتهاء من جمع الرو داتا وتنظيفها بالبايثون، وجاري العمل على قواعد البيانات والداشبورد.
+
+* **1. Raw Data (مكتمل ✅):** 
+  - يحتوي على الملفات الأصلية غير المجرّدة. يمكنك زيارة مجلد [Row Data Folder](./Row%20Data) للاطلاع على:
+    - `Diabetes Dataset – NCD-RisC.csv`
+    - `Obesity Dataset – NCD-RisC.csv`
+    - `Physical Inactivity.csv`
+    - `economic_health_indicators_egypt_japan_usa_2000_2022.csv`
+
+* **2. Python Cleaning (مكتمل ✅):** 
+  - تم معالجة البيانات وتنظيفها. يمكنك مراجعة التفاصيل والسكربتات عبر الانتقال إلى صفحة [Python Documentation (PYTHON_README.md)](PYTHON_README.md).
+
+* **3. SQL & Database (قيد العمل ⏳):** 
+  - جارِ بناء الجداول والـ Schema وعمل الـ Queries. لمعرفة تفاصيل هيكل قاعدة البيانات، تابع [SQL Documentation (SQL_README.md)](SQL_README.md).
+
+* **4. Dashboards - Power BI & Tableau (قادم ⏳):** 
+  - التقارير التفاعلية والقصص البصرية. تابع التحديثات عبر [Dashboards Documentation (DASHBOARD_README.md)](DASHBOARD_README.md).
