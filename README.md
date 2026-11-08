@@ -110,8 +110,8 @@ Developed as part of the **DEPI Professional Data Analytics Track**.
 > **Quick Status Summary:** Raw data collection and Python data cleaning are completed. Database and dashboard development are currently in progress.
 
 * **1. Raw Data (Completed ✅):** 
-  - Contains the initial unprocessed datasets. You can check the detailed documentation and files via [Row Data Documentation (ROW_DATA_README.md)].
-
+  - Contains the initial unprocessed datasets. You can check the detailed documentation and files via [Row Data Documentation (Row Data/ROW_DATA_README.md)](ROW_DATA_README.md) .
+  
 * **2. Python Cleaning (Completed ✅):** 
   - Data has been preprocessed and cleaned. Review the full details and scripts via [Python Documentation (PYTHON_README.md)](PYTHON_README.md).
 
