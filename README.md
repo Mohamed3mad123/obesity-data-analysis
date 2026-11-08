@@ -8,6 +8,25 @@
   </a>
 </p>
 
+<!-- Workflow Navigation Bar -->
+<p align="center">
+  <a href="#1-raw-data-✅-completed">
+    <img src="https://img.shields.io/badge/1._Raw_Data-Completed-27AE60?style=for-the-badge" alt="Raw Data">
+  </a> &nbsp;
+  <a href="#2-python-cleaning--preprocessing-✅-completed">
+    <img src="https://img.shields.io/badge/2._Python_Cleaning-Completed-27AE60?style=for-the-badge" alt="Python Cleaning">
+  </a> &nbsp;
+  <a href="#3-sql--database-⏳-in-progress">
+    <img src="https://img.shields.io/badge/3._SQL_%26_Database-In_Progress-F39C12?style=for-the-badge" alt="SQL Database">
+  </a> &nbsp;
+  <a href="#4-power-bi--tableau-dashboards-⏳-pending">
+    <img src="https://img.shields.io/badge/4._Dashboards-Pending-7F8C8D?style=for-the-badge" alt="Dashboards">
+  </a>
+</p>
+<p align="center">
+  <sub><i>💡 Click any workflow stage above to jump directly to its details and links below. Current Status: Only Raw Data & Python Cleaning are completed.</i></sub>
+</p>
+
 <p align="center">
   <b>Track:</b> Professional Data Analyst &nbsp;|&nbsp; 
   <b>Group:</b> CLS GIZ5_DAT3_G1 &nbsp;|&nbsp; 
@@ -64,7 +83,7 @@ The project plans to investigate the following indicators, subject to data avail
 
 ## <span style="color: #2E86C1;">Project Workflow</span>
 1. Data collection and source verification
-​2. Data cleaning and preparation
+2. Data cleaning and preparation
 3. Exploratory data analysis
 4. SQL-based analysis
 5. Visualization and dashboard development
@@ -74,6 +93,34 @@ The project plans to investigate the following indicators, subject to data avail
 - [`System Analysis & Design.pdf`](System%20Analysis%20&%20Design.pdf) / [`SYSTEM_ANALYSIS_README.md`](SYSTEM_ANALYSIS_README.md) — Comprehensive system analysis, database design, and project documentation (available in both PDF and Markdown formats).
 
 Additional folders and deliverables will be added as the project progresses.
+
+---
+
+## <span style="color: #2E86C1;">Project Workflow & Deliverables Status</span>
+
+> **Note:** *Only Raw Data and Python Cleaning stages are completed. The remaining stages are currently in progress.*
+
+### <span style="color: #2E86C1;">1. Raw Data ✅ (Completed)</span>
+Contains the initial unprocessed datasets used for the analysis.
+- 📁 [Row Data Folder](./Row%20Data)
+  - [`Diabetes Dataset – NCD-RisC.csv](./Row%20Data/Diabetes%20Dataset%20–%20NCD-RisC.csv)
+  - [`Obesity Dataset – NCD-RisC.csv](./Row%20Data/Obesity%20Dataset%20–%20NCD-RisC.csv)
+  - [`Physical Inactivity.csv](./Row%20Data/Physical%20Inactivity.csv)
+  - [`economic_health_indicators_egypt_japan_usa_2000_2022.csv](./Row%20Data/economic_health_indicators_egypt_japan_usa_2000_2022.csv)
+
+### <span style="color: #2E86C1;">2. Python Cleaning & Preprocessing ✅ (Completed)</span>
+Data transformation, handling missing values, and structuring datasets using Pandas and NumPy.
+- 📜 Python Script: *Coming soon* (Will link to the cleaning script/notebook once uploaded).
+
+### <span style="color: #2E86C1;">3. SQL & Database ⏳ (In Progress)</span>
+Database schema creation, DDL/DML scripts, and relational queries in SQL Server.
+- 🗄️ Database Scripts: *In progress*
+
+### <span style="color: #48C9B0;">4. Power BI & Tableau Dashboards ⏳ (Pending)</span>
+Interactive visual reports and storytelling dashboards.
+- 📊 Dashboards: *Pending*
+
+---
 
 ## <span style="color: #2E86C1;">Important Note</span>
 This project focuses on descriptive analysis and associations between indicators. Observed relationships will not be interpreted as proof of causation.
