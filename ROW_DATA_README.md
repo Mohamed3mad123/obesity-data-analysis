@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="../DEPILogo.png" alt="DEPI Logo" width="180">
+  <img src="DEPILogo.png" alt="DEPI Logo" width="180">
 </p>
 
 <p align="center">
