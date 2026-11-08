@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <a href="../README.md">
+  <a href="README.md">
     <img src="https://img.shields.io/badge/⬅️_Back_to_Main_Project-2E86C1?style=for-the-badge" alt="Back to Main">
   </a>
 </p>
