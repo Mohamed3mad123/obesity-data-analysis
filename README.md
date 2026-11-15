@@ -19,7 +19,7 @@
   </a> 
   &nbsp;<b>➔</b>&nbsp;
   <a href="PYTHON_README.md">
-    <img src="https://img.shields.io/badge/2._Python-Done-27AE60?style=for-the-badge&logo=python&logoColor=white" alt="Python Cleaning">
+    <img src="python.md" alt="Python Cleaning">
   </a> 
   &nbsp;<b>➔</b>&nbsp;
   <a href="SQL_README.md">
