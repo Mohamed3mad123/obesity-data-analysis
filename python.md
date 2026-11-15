@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="db_logo.png" alt="Project Logo" width="180">
+  <img src="DEPILogo.png" alt="Project Logo" width="180">
   <br><br>
   <a href="README.md">
     <img src="https://img.shields.io/badge/⬅_Back_to_Main_README-README.md-blue?style=for-the-badge" alt="Back to README.md">
