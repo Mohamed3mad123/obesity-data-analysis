@@ -1,17 +1,21 @@
-# Global Obesity & Health Indicators Data Analysis (2000–2022)
-
-## Project Overview
-This project focuses on analyzing obesity trends and their relationship with diabetes, physical inactivity, and economic health indicators across **Egypt**, **Japan**, and the **United States** from **2000 to 2022**. 
-
-Before conducting exploratory data analysis (EDA) and visualization, **Python (Pandas)** was used to clean, standardize, validate, and structure raw datasets sourced from the **NCD Risk Factor Collaboration (NCD-RisC)**, the **World Health Organization (WHO)**, and economic health repositories.
+<div align="center">
+  <img src="db_logo.png" alt="Project Logo" width="180">
+  <br><br>
+  <a href="README.md">
+    <img src="https://img.shields.io/badge/⬅_Back_to_Main_README-README.md-blue?style=for-the-badge" alt="Back to README.md">
+  </a>
+</div>
 
 ---
 
-## Data Cleaning & Preparation Pipeline
+# 2. Cleaning the Data with Python
+
+In this phase of the project, **Python (Pandas)** was used to clean, standardize, validate, and structure raw datasets sourced from the **NCD Risk Factor Collaboration (NCD-RisC)**, the **World Health Organization (WHO)**, and economic health repositories for **Egypt**, **Japan**, and the **United States** from **2000 to 2022**.
 
 Below is a step-by-step breakdown of the Python script used to prepare the datasets for analysis and SQL database integration.
 
 ### Step 1: Loading Raw Datasets & Initial Inspection
+
 ```python
 import pandas as pd
 
@@ -27,12 +31,13 @@ print(f"Obesity shape: {df_obesity.shape}")
 print(f"Physical Inactivity shape: {df_inactivity.shape}")
 print(f"Economic Indicators shape: {df_economic.shape}")
 ```
-**Description:**  
+
+**Description:**
+
 This block imports the `pandas` library and loads the four raw CSV files into separate DataFrames. It then prints the dimensions (number of rows and columns) of each dataset to establish a baseline understanding of the data volume before cleaning.
 
----
-
 ### Step 2: Checking for Duplicates and Missing Values
+
 ```python
 # 2. null & duplicate checks
 
@@ -54,14 +59,16 @@ inctv_nulls = df_inactivity.isnull().sum()
 print("\nInactivity columns with nulls:")
 print(inctv_nulls[inctv_nulls > 0])
 ```
-**Description:**  
+
+**Description:**
+
 This step performs data quality checks across all four datasets:
+
 * **Duplicate Check:** Verifies that there are no exact duplicate records in any of the files (all returned `0` duplicates).
 * **Null Value Check:** Confirms that the Diabetes, Obesity, and Economic datasets have zero missing values. For the WHO Physical Inactivity dataset, it identifies completely empty metadata columns (such as `Dim3` and `FactComments`) that are irrelevant to the analysis and will be excluded during filtering.
 
----
-
 ### Step 3: Scope Filtering, Column Standardization & Harmonization
+
 ```python
 # 3. standardization & scope filtering
 
@@ -161,16 +168,18 @@ print("Obesity:", df_obesity_clean.shape, "| Nulls:", df_obesity_clean.isnull().
 print("Inactivity:", df_inactivity_clean.shape, "| Nulls:", df_inactivity_clean.isnull().sum().sum())
 print("Economic:", df_economic_clean.shape, "| Nulls:", df_economic_clean.isnull().sum().sum())
 ```
-**Description:**  
+
+**Description:**
+
 This is the core transformation step where all datasets are aligned to a unified schema:
+
 * **Scope Filtering:** Filters records to include only **Egypt (`EGY`)**, **Japan (`JPN`)**, and the **United States (`USA`)** between **2000 and 2022**.
 * **Demographic Alignment (WHO Data):** Filters the Physical Inactivity dataset to focus exclusively on adults aged `18+` and excludes the aggregate `'Both sexes'` category so that its granularity matches the NCD-RisC tables (`Men` and `Women`).
 * **Schema & Value Standardization:** Renames columns to clean, SQL-friendly identifiers (`Country`, `Country_Code`, `Year`, `Sex`), maps consistent country names (`Egypt`, `Japan`, `United States`), and standardizes gender labels (`Male`/`Female` $\rightarrow$ `Men`/`Women`).
 * **Sorting & Indexing:** Selects only relevant analytical columns, sorts records chronologically by country and gender, and resets row indices. The three health datasets result in **138 rows** each ($3 \text{ countries} \times 23 \text{ years} \times 2 \text{ sexes}$), while the country-level economic dataset results in **69 rows** ($3 \text{ countries} \times 23 \text{ years}$).
 
----
-
 ### Step 4: Time-Series Continuity & Completeness Validation
+
 ```python
 # 4. check year coverage and make sure no years are missing
 
@@ -211,14 +220,16 @@ for code in countries:
 if not econ_missing:
     print("Economic: Complete (0 missing years for all countries)")
 ```
-**Description:**  
+
+**Description:**
+
 This validation step ensures there are no hidden gaps in the time series:
+
 * **Timeline Verification:** Demonstrates why `2000–2022` was chosen as the shared timeframe (since Physical Inactivity and Economic data start in 2000, whereas NCD-RisC starts in 1990).
 * **Granular Gap Detection:** Compares the actual years present in each `(Country, Sex)` subgroup against the expected set of 23 years (`2000–2022`). It confirms **100% completeness** with zero missing years across all four cleaned datasets.
 
----
-
 ### Step 5: Exporting Cleaned Data (Excel & SQL Ready)
+
 ```python
 # 5: export cleaned datasets
 
@@ -236,5 +247,7 @@ files.download('diabetes.xlsx')
 files.download('physical_inactivity.xlsx')
 files.download('economic_health_indicators.xlsx')
 ```
-**Description:**  
+
+**Description:**
+
 Finally, the four cleaned and validated DataFrames are exported into clean `.xlsx` files without index columns (`index=False`) and downloaded locally from Google Colab. Additionally, the notebook includes a commented-out `SQLAlchemy` template for pushing the standardized tables directly into a Microsoft SQL Server database for relational querying.
