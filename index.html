@@ -138,11 +138,11 @@
 
       <!-- Action Buttons -->
       <div class="flex items-center space-x-3">
-        <a href="SYSTEM_ANALYSIS_README.md" class="hidden sm:inline-flex items-center space-x-2 px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 hover:bg-cyan-500/20 hover:border-cyan-400 transition-all">
+        <a href="SQL_README.md" class="hidden sm:inline-flex items-center space-x-2 px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 hover:bg-cyan-500/20 hover:border-cyan-400 transition-all">
           <i class="fa-solid fa-book-open"></i>
-          <span>System Design</span>
+          <span>SQL Docs</span>
         </a>
-        <a href="Row Data/ROW_DATA_README.md" class="inline-flex items-center space-x-2 px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-slate-950 font-bold hover:brightness-110 shadow-lg shadow-cyan-500/20 transition-all">
+        <a href="ROW_DATA_README.md" class="inline-flex items-center space-x-2 px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-slate-950 font-bold hover:brightness-110 shadow-lg shadow-cyan-500/20 transition-all">
           <i class="fa-solid fa-folder-open"></i>
           <span>Raw Datasets</span>
         </a>
@@ -199,9 +199,9 @@
             <div class="text-[10px] text-emerald-400/70 mt-0.5">BMI, GDP, Diabetes...</div>
           </div>
           <div class="glass-card glass-card-hover p-4 rounded-2xl text-center border-t-2 border-t-amber-400">
-            <div class="text-3xl font-black text-amber-400 font-mono">Stage 2/4</div>
+            <div class="text-3xl font-black text-amber-400 font-mono">Stage 3/4</div>
             <div class="text-xs text-slate-400 font-medium uppercase tracking-wider mt-1">Current Progress</div>
-            <div class="text-[10px] text-amber-400/70 mt-0.5">Cleaning & Prep Done</div>
+            <div class="text-[10px] text-amber-400/70 mt-0.5">SQL Modeling & ETL</div>
           </div>
         </div>
 
@@ -243,10 +243,10 @@
           </button>
 
           <!-- Stage 2: Python Cleaning -->
-          <button onclick="switchWorkflowTab('python-cleaning')" id="tab-python-cleaning" class="workflow-tab-btn text-left p-4 rounded-xl border transition-all duration-300 border-cyan-500/50 bg-cyan-500/10 hover:border-cyan-400 ring-2 ring-cyan-500/30">
+          <button onclick="switchWorkflowTab('python-cleaning')" id="tab-python-cleaning" class="workflow-tab-btn text-left p-4 rounded-xl border transition-all duration-300 border-emerald-500/50 bg-emerald-500/10 hover:border-emerald-400">
             <div class="flex items-center justify-between mb-2">
-              <span class="w-7 h-7 rounded-lg bg-cyan-500/20 text-cyan-400 font-mono text-xs font-bold flex items-center justify-center">02</span>
-              <span class="px-2 py-0.5 text-[10px] font-bold uppercase rounded-full bg-cyan-500/20 text-cyan-400 border border-cyan-500/40">
+              <span class="w-7 h-7 rounded-lg bg-emerald-500/20 text-emerald-400 font-mono text-xs font-bold flex items-center justify-center">02</span>
+              <span class="px-2 py-0.5 text-[10px] font-bold uppercase rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
                 <i class="fa-solid fa-check text-[8px] mr-1"></i>Completed
               </span>
             </div>
@@ -255,26 +255,26 @@
           </button>
 
           <!-- Stage 3: SQL Database -->
-          <button onclick="switchWorkflowTab('sql-db')" id="tab-sql-db" class="workflow-tab-btn text-left p-4 rounded-xl border transition-all duration-300 border-amber-500/30 bg-slate-900/50 hover:border-amber-400 opacity-85">
+          <button onclick="switchWorkflowTab('sql-db')" id="tab-sql-db" class="workflow-tab-btn text-left p-4 rounded-xl border transition-all duration-300 border-cyan-500/50 bg-cyan-500/10 hover:border-cyan-400 ring-2 ring-cyan-500/30">
             <div class="flex items-center justify-between mb-2">
-              <span class="w-7 h-7 rounded-lg bg-amber-500/20 text-amber-400 font-mono text-xs font-bold flex items-center justify-center">03</span>
+              <span class="w-7 h-7 rounded-lg bg-cyan-500/20 text-cyan-400 font-mono text-xs font-bold flex items-center justify-center">03</span>
+              <span class="px-2 py-0.5 text-[10px] font-bold uppercase rounded-full bg-cyan-500/20 text-cyan-400 border border-cyan-500/40">
+                <i class="fa-solid fa-check text-[8px] mr-1"></i>Completed
+              </span>
+            </div>
+            <h3 class="font-bold text-sm text-slate-100">3. SQL & Database Model</h3>
+            <p class="text-xs text-slate-400 mt-1 line-clamp-2">Relational Star Schema DDL/DML, analytical queries & views setup.</p>
+          </button>
+
+          <!-- Stage 4: Dashboards -->
+          <button onclick="switchWorkflowTab('dashboards')" id="tab-dashboards" class="workflow-tab-btn text-left p-4 rounded-xl border transition-all duration-300 border-amber-500/30 bg-slate-900/50 hover:border-amber-400 opacity-85">
+            <div class="flex items-center justify-between mb-2">
+              <span class="w-7 h-7 rounded-lg bg-amber-500/20 text-amber-400 font-mono text-xs font-bold flex items-center justify-center">04</span>
               <span class="px-2 py-0.5 text-[10px] font-bold uppercase rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/40">
                 <i class="fa-solid fa-spinner animate-spin text-[8px] mr-1"></i>In Progress
               </span>
             </div>
-            <h3 class="font-bold text-sm text-slate-200">3. SQL & Database Model</h3>
-            <p class="text-xs text-slate-400 mt-1 line-clamp-2">Relational schema DDL/DML, analytical queries & views setup.</p>
-          </button>
-
-          <!-- Stage 4: Dashboards -->
-          <button onclick="switchWorkflowTab('dashboards')" id="tab-dashboards" class="workflow-tab-btn text-left p-4 rounded-xl border transition-all duration-300 border-slate-700 bg-slate-900/40 hover:border-slate-500 opacity-70">
-            <div class="flex items-center justify-between mb-2">
-              <span class="w-7 h-7 rounded-lg bg-slate-700/40 text-slate-400 font-mono text-xs font-bold flex items-center justify-center">04</span>
-              <span class="px-2 py-0.5 text-[10px] font-bold uppercase rounded-full bg-slate-800 text-slate-400 border border-slate-700">
-                Pending
-              </span>
-            </div>
-            <h3 class="font-bold text-sm text-slate-300">4. Power BI & Tableau</h3>
+            <h3 class="font-bold text-sm text-slate-200">4. Power BI & Tableau</h3>
             <p class="text-xs text-slate-400 mt-1 line-clamp-2">Interactive dashboards, storytelling, and visual KPI modeling.</p>
           </button>
 
@@ -293,7 +293,7 @@
                 </h4>
                 <p class="text-xs text-slate-400">All original CSV source files are verified and cataloged in the repository.</p>
               </div>
-              <a href="Row Data/ROW_DATA_README.md" class="inline-flex items-center space-x-1.5 text-xs text-emerald-400 hover:underline">
+              <a href="ROW_DATA_README.md" class="inline-flex items-center space-x-1.5 text-xs text-emerald-400 hover:underline">
                 <span>Open ROW_DATA_README.md</span>
                 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
               </a>
@@ -313,23 +313,23 @@
                 <div class="text-slate-400 mt-1">Insufficient physical activity measurements across demographic categories in Egypt, Japan, and USA.</div>
               </div>
               <div class="p-3 rounded-lg bg-slate-900 border border-slate-800">
-                <div class="font-mono font-bold text-slate-200">economic_health_indicators_2000_2022.csv</div>
+                <div class="font-mono font-bold text-slate-200">economic_health_indicators_egypt_japan_usa_2000_2022.csv</div>
                 <div class="text-slate-400 mt-1">Macroeconomic indicators including GDP per capita (PPP) and per-capita health expenditures.</div>
               </div>
             </div>
           </div>
 
-          <!-- Content 2: Python Cleaning (Active by default) -->
-          <div id="content-python-cleaning" class="workflow-content space-y-4">
+          <!-- Content 2: Python Cleaning -->
+          <div id="content-python-cleaning" class="workflow-content hidden space-y-4">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-3">
               <div>
-                <h4 class="font-bold text-cyan-400 flex items-center space-x-2">
+                <h4 class="font-bold text-emerald-400 flex items-center space-x-2">
                   <i class="fa-brands fa-python"></i>
-                  <span>Stage 2: Python Data Cleaning & Transformation Pipeline</span>
+                  <span>Stage 2: Python Data Cleaning & Transformation Pipeline (Completed)</span>
                 </h4>
                 <p class="text-xs text-slate-400">Data cleaning scripts executed using Pandas & NumPy to standardize schemas.</p>
               </div>
-              <a href="PYTHON_README.md" class="inline-flex items-center space-x-1.5 text-xs text-cyan-400 hover:underline">
+              <a href="PYTHON_README.md" class="inline-flex items-center space-x-1.5 text-xs text-emerald-400 hover:underline">
                 <span>Open PYTHON_README.md</span>
                 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
               </a>
@@ -342,42 +342,55 @@
 <span class="text-purple-400">import</span> numpy <span class="text-purple-400">as</span> np
 
 <span class="text-slate-500"># 1. Load Raw Datasets</span>
-df_obesity = pd.read_csv(<span class="text-emerald-300">'Row Data/Obesity Dataset – NCD-RisC.csv'</span>)
-df_economic = pd.read_csv(<span class="text-emerald-300">'Row Data/economic_health_indicators_egypt_japan_usa_2000_2022.csv'</span>)
+df_diabetes = pd.read_csv(<span class="text-emerald-300">'Diabetes Dataset – NCD-RisC.csv'</span>)
+df_obesity = pd.read_csv(<span class="text-emerald-300">'Obesity Dataset – NCD-RisC.csv'</span>)
+df_inactivity = pd.read_csv(<span class="text-emerald-300">'Physical Inactivity.csv'</span>)
+df_economic = pd.read_csv(<span class="text-emerald-300">'economic_health_indicators_egypt_japan_usa_2000_2022.csv'</span>)
 
-<span class="text-slate-500"># 2. Filter Target Countries (Egypt, Japan, USA) & Date Range (2000-2022)</span>
-target_countries = [<span class="text-emerald-300">'Egypt'</span>, <span class="text-emerald-300">'Japan'</span>, <span class="text-emerald-300">'United States of America'</span>]
-df_clean = df_obesity[df_obesity[<span class="text-emerald-300">'Country'</span>].isin(target_countries) & df_obesity[<span class="text-emerald-300">'Year'</span>].between(<span class="text-amber-300">2000</span>, <span class="text-amber-300">2022</span>)]
-
-<span class="text-slate-500"># 3. Handle Missing Values & Merge Indicators</span>
-df_final = pd.merge(df_clean, df_economic, on=[<span class="text-emerald-300">'Country'</span>, <span class="text-emerald-300">'Year'</span>], how=<span class="text-emerald-300">'left'</span>)
-df_final.to_csv(<span class="text-emerald-300">'Cleaned Data/cleaned_obesity_indicators.csv'</span>, index=<span class="text-amber-300">False</span>)</pre>
+<span class="text-slate-500"># 2. Scope Filtering & Standardization (Egypt, Japan, USA from 2000 to 2022)</span>
+countries = [<span class="text-emerald-300">'EGY'</span>, <span class="text-emerald-300">'JPN'</span>, <span class="text-emerald-300">'USA'</span>]
+country_names = {<span class="text-emerald-300">'EGY'</span>: <span class="text-emerald-300">'Egypt'</span>, <span class="text-emerald-300">'JPN'</span>: <span class="text-emerald-300">'Japan'</span>, <span class="text-emerald-300">'USA'</span>: <span class="text-emerald-300">'United States'</span>}</pre>
             </div>
           </div>
 
-          <!-- Content 3: SQL DB -->
-          <div id="content-sql-db" class="workflow-content hidden space-y-4">
+          <!-- Content 3: SQL DB (Active by default) -->
+          <div id="content-sql-db" class="workflow-content space-y-4">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-3">
               <div>
-                <h4 class="font-bold text-amber-400 flex items-center space-x-2">
+                <h4 class="font-bold text-cyan-400 flex items-center space-x-2">
                   <i class="fa-solid fa-server"></i>
-                  <span>Stage 3: SQL Relational Database & Queries (In Progress)</span>
+                  <span>Stage 3: SQL Relational Database & Star Schema (Completed)</span>
                 </h4>
-                <p class="text-xs text-slate-400">Designing normalized tables (3NF) and analytical SQL queries in SQL Server.</p>
+                <p class="text-xs text-slate-400">Normalized relational tables and dimensional modeling executed in SQL Server.</p>
               </div>
-              <a href="SQL_README.md" class="inline-flex items-center space-x-1.5 text-xs text-amber-400 hover:underline">
+              <a href="SQL_README.md" class="inline-flex items-center space-x-1.5 text-xs text-cyan-400 hover:underline">
                 <span>Open SQL_README.md</span>
                 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
               </a>
             </div>
 
-            <div class="p-4 rounded-lg bg-slate-900 border border-slate-800 text-xs space-y-2">
-              <div class="font-mono text-slate-300 font-bold">Planned Database Relational Schema:</div>
-              <ul class="list-disc list-inside text-slate-400 space-y-1">
-                <li><strong class="text-amber-300 font-mono">Fact_Obesity_Metrics:</strong> Year, Country_ID, Obesity_Prevalence, Lower_95_UI, Upper_95_UI...</li>
-                <li><strong class="text-amber-300 font-mono">Fact_Economic_Indicators:</strong> Year, Country_ID, GDP_Per_Capita_PPP, Health_Expenditure_Per_Capita...</li>
-                <li><strong class="text-amber-300 font-mono">Dim_Country:</strong> Country_ID, Country_Name, Region, ISO_Code</li>
-              </ul>
+            <div class="relative">
+              <pre class="bg-slate-900 p-4 rounded-lg font-mono text-xs text-cyan-300 overflow-x-auto border border-cyan-500/20 leading-relaxed">
+<span class="text-slate-500">-- Star Schema Dimension & Fact Tables Setup</span>
+<span class="text-purple-400">CREATE DATABASE</span> Health_Analytics;
+<span class="text-purple-400">GO</span>
+<span class="text-purple-400">USE</span> Health_Analytics;
+<span class="text-purple-400">GO</span>
+
+<span class="text-slate-500">-- Create Dimension Tables</span>
+<span class="text-purple-400">CREATE TABLE</span> dbo.DimCountry (Country_Code VARCHAR(3) <span class="text-purple-400">PRIMARY KEY</span>, Country_Name NVARCHAR(50) <span class="text-purple-400">NOT NULL</span>);
+<span class="text-purple-400">CREATE TABLE</span> dbo.DimYear ([Year] INT <span class="text-purple-400">PRIMARY KEY</span>);
+<span class="text-purple-400">CREATE TABLE</span> dbo.DimSex (Sex_ID INT <span class="text-purple-400">PRIMARY KEY</span>, Sex_Name VARCHAR(10) <span class="text-purple-400">UNIQUE NOT NULL</span>);
+
+<span class="text-slate-500">-- Create Fact Tables (Obesity, Diabetes, Physical Inactivity, Economic)</span>
+<span class="text-purple-400">CREATE TABLE</span> dbo.FactObesity (
+    Country_Code VARCHAR(3) <span class="text-purple-400">NOT NULL</span>,
+    [Year] INT <span class="text-purple-400">NOT NULL</span>,
+    Sex_ID INT <span class="text-purple-400">NOT NULL</span>,
+    [Obesity_Prevalence] DECIMAL(20,12) <span class="text-purple-400">NOT NULL</span>,
+    <span class="text-purple-400">CONSTRAINT</span> PK_FactObesity <span class="text-purple-400">PRIMARY KEY</span> ([Country_Code], [Year], [Sex_ID]),
+    <span class="text-purple-400">CONSTRAINT</span> FK_FactObesity_Country <span class="text-purple-400">FOREIGN KEY</span> (Country_Code) <span class="text-purple-400">REFERENCES</span> dbo.DimCountry(Country_Code)
+);</pre>
             </div>
           </div>
 
@@ -385,20 +398,20 @@ df_final.to_csv(<span class="text-emerald-300">'Cleaned Data/cleaned_obesity_ind
           <div id="content-dashboards" class="workflow-content hidden space-y-4">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-3">
               <div>
-                <h4 class="font-bold text-purple-400 flex items-center space-x-2">
+                <h4 class="font-bold text-amber-400 flex items-center space-x-2">
                   <i class="fa-solid fa-chart-pie"></i>
-                  <span>Stage 4: Power BI & Tableau Visual Dashboards (Pending)</span>
+                  <span>Stage 4: Power BI & Tableau Visual Dashboards (In Progress)</span>
                 </h4>
                 <p class="text-xs text-slate-400">Upcoming interactive reports for executive storytelling and comparative exploration.</p>
               </div>
-              <a href="DASHBOARD_README.md" class="inline-flex items-center space-x-1.5 text-xs text-purple-400 hover:underline">
+              <a href="DASHBOARD_README.md" class="inline-flex items-center space-x-1.5 text-xs text-amber-400 hover:underline">
                 <span>Open DASHBOARD_README.md</span>
                 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
               </a>
             </div>
 
-            <div class="p-4 rounded-lg bg-slate-900 border border-slate-800 text-xs text-slate-400">
-              Visual dashboards will feature trend comparisons, correlation matrix heatmaps between GDP and Obesity, and interactive country selection filters.
+            <div class="p-4 rounded-lg bg-slate-900 border border-slate-800 text-xs text-slate-300">
+              Visual dashboards feature multi-country trend comparisons, correlation matrix heatmaps between GDP, physical inactivity, diabetes, and obesity prevalence.
             </div>
           </div>
 
@@ -583,206 +596,240 @@ df_final.to_csv(<span class="text-emerald-300">'Cleaned Data/cleaned_obesity_ind
           <h2 class="text-2xl sm:text-3xl font-bold mt-1">Project Team Members</h2>
         </div>
         <div class="text-xs font-mono text-slate-400">
-          Group: <strong class="text-cyan-300">CLS GIZ5_DAT3_G1</strong> | Team: <strong class="text-cyan-300">Team 1</strong>
+          Group: <strong class="text-cyan-300">CLS GIZ5_DAT3_G1</strong> • Team 1
         </div>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         
-        <!-- Team Leader: Mohamed Emad Hamdy -->
-        <div class="glass-card glass-card-hover p-5 rounded-2xl border-t-2 border-t-cyan-400 relative overflow-hidden group">
-          <div class="flex items-center space-x-4">
-            <div class="w-12 h-12 rounded-xl bg-cyan-500/20 text-cyan-400 font-bold flex items-center justify-center text-lg font-mono border border-cyan-500/40">
-              ME
-            </div>
-            <div>
-              <h3 class="font-bold text-base text-slate-100 group-hover:text-cyan-300 transition-colors">
-                Mohamed Emad Hamdy
-              </h3>
-              <span class="inline-block px-2 py-0.5 text-[10px] font-bold uppercase rounded bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 mt-0.5">
-                Team Leader
-              </span>
-            </div>
+        <!-- Team Member 1: Mohamed Emad -->
+        <div class="glass-card glass-card-hover p-5 rounded-2xl flex items-center space-x-4 border border-cyan-500/30">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center font-bold text-slate-950 text-lg shadow-lg shadow-cyan-500/20">
+            ME
           </div>
-          <p class="text-xs text-slate-400 mt-3">
-            Project coordination, system analysis architecture, Python ETL pipeline & database modeling lead.
-          </p>
+          <div>
+            <div class="font-bold text-slate-100 flex items-center space-x-2">
+              <span>Mohamed Emad Hamdy</span>
+              <span class="px-1.5 py-0.5 text-[9px] font-mono rounded bg-cyan-500/20 text-cyan-300 border border-cyan-500/40">Leader</span>
+            </div>
+            <div class="text-xs text-cyan-400 font-mono mt-0.5">Team 1 Leader & Data Analyst</div>
+            <div class="text-[11px] text-slate-400 mt-1">SQL Server, Python ETL & Architecture</div>
+          </div>
         </div>
 
-        <!-- Fayza Mohey El-Dein Mohamed -->
-        <div class="glass-card glass-card-hover p-5 rounded-2xl border-t-2 border-t-teal-400 relative overflow-hidden group">
-          <div class="flex items-center space-x-4">
-            <div class="w-12 h-12 rounded-xl bg-teal-500/20 text-teal-400 font-bold flex items-center justify-center text-lg font-mono border border-teal-500/40">
-              FM
-            </div>
-            <div>
-              <h3 class="font-bold text-base text-slate-100 group-hover:text-teal-300 transition-colors">
-                Fayza Mohey El-Dein
-              </h3>
-              <span class="inline-block px-2 py-0.5 text-[10px] font-bold uppercase rounded bg-slate-800 text-slate-300 mt-0.5">
-                Data Analyst
-              </span>
-            </div>
+        <!-- Team Member 2 -->
+        <div class="glass-card glass-card-hover p-5 rounded-2xl flex items-center space-x-4">
+          <div class="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center font-bold text-cyan-400 text-lg">
+            FM
           </div>
-          <p class="text-xs text-slate-400 mt-3">
-            Exploratory data analysis, NCD-RisC indicator verification, and economic dataset integration.
-          </p>
+          <div>
+            <div class="font-bold text-slate-100">Fayza Mohey El-Dein</div>
+            <div class="text-xs text-slate-400 font-mono mt-0.5">Team Member</div>
+            <div class="text-[11px] text-slate-400 mt-1">Data Cleaning & Analysis</div>
+          </div>
         </div>
 
-        <!-- Rahma Sayed Mahmoud -->
-        <div class="glass-card glass-card-hover p-5 rounded-2xl border-t-2 border-t-emerald-400 relative overflow-hidden group">
-          <div class="flex items-center space-x-4">
-            <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center text-lg font-mono border border-emerald-500/40">
-              RS
-            </div>
-            <div>
-              <h3 class="font-bold text-base text-slate-100 group-hover:text-emerald-300 transition-colors">
-                Rahma Sayed Mahmoud
-              </h3>
-              <span class="inline-block px-2 py-0.5 text-[10px] font-bold uppercase rounded bg-slate-800 text-slate-300 mt-0.5">
-                Data Analyst
-              </span>
-            </div>
+        <!-- Team Member 3 -->
+        <div class="glass-card glass-card-hover p-5 rounded-2xl flex items-center space-x-4">
+          <div class="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center font-bold text-cyan-400 text-lg">
+            RS
           </div>
-          <p class="text-xs text-slate-400 mt-3">
-            Data cleaning, uncertainty interval calculations (95% UI), and statistical metric validation.
-          </p>
+          <div>
+            <div class="font-bold text-slate-100">Rahma Sayed Mahmoud</div>
+            <div class="text-xs text-slate-400 font-mono mt-0.5">Team Member</div>
+            <div class="text-[11px] text-slate-400 mt-1">Data Modeling & Metrics</div>
+          </div>
         </div>
 
-        <!-- Engy Samy Aboubakr -->
-        <div class="glass-card glass-card-hover p-5 rounded-2xl border-t-2 border-t-purple-400 relative overflow-hidden group">
-          <div class="flex items-center space-x-4">
-            <div class="w-12 h-12 rounded-xl bg-purple-500/20 text-purple-400 font-bold flex items-center justify-center text-lg font-mono border border-purple-500/40">
-              ES
-            </div>
-            <div>
-              <h3 class="font-bold text-base text-slate-100 group-hover:text-purple-300 transition-colors">
-                Engy Samy Aboubakr
-              </h3>
-              <span class="inline-block px-2 py-0.5 text-[10px] font-bold uppercase rounded bg-slate-800 text-slate-300 mt-0.5">
-                Data Analyst
-              </span>
-            </div>
+        <!-- Team Member 4 -->
+        <div class="glass-card glass-card-hover p-5 rounded-2xl flex items-center space-x-4">
+          <div class="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center font-bold text-cyan-400 text-lg">
+            ES
           </div>
-          <p class="text-xs text-slate-400 mt-3">
-            SQL database schema design, entity-relationship modeling, and analytical SQL querying.
-          </p>
+          <div>
+            <div class="font-bold text-slate-100">Engy Samy Aboubakr</div>
+            <div class="text-xs text-slate-400 font-mono mt-0.5">Team Member</div>
+            <div class="text-[11px] text-slate-400 mt-1">Statistical Analysis & Reporting</div>
+          </div>
         </div>
 
-        <!-- Eslam Houssny Mohamed -->
-        <div class="glass-card glass-card-hover p-5 rounded-2xl border-t-2 border-t-amber-400 relative overflow-hidden group">
-          <div class="flex items-center space-x-4">
-            <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 font-bold flex items-center justify-center text-lg font-mono border border-amber-500/40">
-              EH
-            </div>
-            <div>
-              <h3 class="font-bold text-base text-slate-100 group-hover:text-amber-300 transition-colors">
-                Eslam Houssny Mohamed
-              </h3>
-              <span class="inline-block px-2 py-0.5 text-[10px] font-bold uppercase rounded bg-slate-800 text-slate-300 mt-0.5">
-                Data Analyst
-              </span>
-            </div>
+        <!-- Team Member 5 -->
+        <div class="glass-card glass-card-hover p-5 rounded-2xl flex items-center space-x-4">
+          <div class="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center font-bold text-cyan-400 text-lg">
+            EH
           </div>
-          <p class="text-xs text-slate-400 mt-3">
-            Power BI dashboard development, DAX modeling, and visual report architecture.
-          </p>
+          <div>
+            <div class="font-bold text-slate-100">Eslam Houssny Mohamed</div>
+            <div class="text-xs text-slate-400 font-mono mt-0.5">Team Member</div>
+            <div class="text-[11px] text-slate-400 mt-1">SQL Queries & Database Setup</div>
+          </div>
         </div>
 
-        <!-- Zeinab Adel Mohamed -->
-        <div class="glass-card glass-card-hover p-5 rounded-2xl border-t-2 border-t-rose-400 relative overflow-hidden group">
-          <div class="flex items-center space-x-4">
-            <div class="w-12 h-12 rounded-xl bg-rose-500/20 text-rose-400 font-bold flex items-center justify-center text-lg font-mono border border-rose-500/40">
-              ZA
-            </div>
-            <div>
-              <h3 class="font-bold text-base text-slate-100 group-hover:text-rose-300 transition-colors">
-                Zeinab Adel Mohamed
-              </h3>
-              <span class="inline-block px-2 py-0.5 text-[10px] font-bold uppercase rounded bg-slate-800 text-slate-300 mt-0.5">
-                Data Analyst
-              </span>
-            </div>
+        <!-- Team Member 6 -->
+        <div class="glass-card glass-card-hover p-5 rounded-2xl flex items-center space-x-4">
+          <div class="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center font-bold text-cyan-400 text-lg">
+            ZA
           </div>
-          <p class="text-xs text-slate-400 mt-3">
-            Tableau data storytelling, documentation editing, and presentation delivery.
-          </p>
+          <div>
+            <div class="font-bold text-slate-100">Zeinab Adel Mohamed</div>
+            <div class="text-xs text-slate-400 font-mono mt-0.5">Team Member</div>
+            <div class="text-[11px] text-slate-400 mt-1">Visualization & Dashboard Design</div>
+          </div>
         </div>
 
-      </div>
-    </section>
-
-    <!-- DOCUMENTATION NAVIGATION QUICK LINKS -->
-    <section class="glass-card p-6 sm:p-8 rounded-2xl space-y-6">
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 border-b border-slate-800 pb-4">
-        <div>
-          <h3 class="text-xl font-bold text-slate-100">Project Documentation & Links</h3>
-          <p class="text-xs text-slate-400 mt-0.5">Access full Markdown documentation files directly in the project repository.</p>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <a href="SYSTEM_ANALYSIS_README.md" class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-cyan-500/50 transition-all group">
-          <div class="flex items-center justify-between text-cyan-400 mb-2">
-            <i class="fa-solid fa-book text-lg"></i>
-            <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
-          </div>
-          <div class="font-bold text-sm text-slate-200">System Analysis</div>
-          <div class="text-[11px] text-slate-400 mt-1">Full database architecture & specification document.</div>
-        </a>
-
-        <a href="Row Data/ROW_DATA_README.md" class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-emerald-500/50 transition-all group">
-          <div class="flex items-center justify-between text-emerald-400 mb-2">
-            <i class="fa-solid fa-folder-tree text-lg"></i>
-            <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
-          </div>
-          <div class="font-bold text-sm text-slate-200">Raw Data Guide</div>
-          <div class="text-[11px] text-slate-400 mt-1">CSV dataset catalog and original source metadata.</div>
-        </a>
-
-        <a href="PYTHON_README.md" class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-cyan-400/50 transition-all group">
-          <div class="flex items-center justify-between text-cyan-300 mb-2">
-            <i class="fa-brands fa-python text-lg"></i>
-            <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
-          </div>
-          <div class="font-bold text-sm text-slate-200">Python Documentation</div>
-          <div class="text-[11px] text-slate-400 mt-1">Data cleaning code, transformation & Pandas logic.</div>
-        </a>
-
-        <a href="SQL_README.md" class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-amber-500/50 transition-all group">
-          <div class="flex items-center justify-between text-amber-400 mb-2">
-            <i class="fa-solid fa-server text-lg"></i>
-            <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
-          </div>
-          <div class="font-bold text-sm text-slate-200">SQL & Database</div>
-          <div class="text-[11px] text-slate-400 mt-1">Entity relationship designs & analytical query scripts.</div>
-        </a>
       </div>
     </section>
 
   </main>
 
-  <!-- FOOTER -->
-  <footer class="glass-card border-t border-slate-800/80 mt-16 py-8 px-4 text-center text-xs text-slate-400">
-    <div class="max-w-7xl mx-auto space-y-3">
-      <p>Developed as part of the <strong>DEPI Professional Data Analytics Track</strong> • Final Project</p>
-      <p class="text-[11px] text-slate-400">
-        Team 1 | Group CLS GIZ5_DAT3_G1 • Egypt, Japan, USA Data Study (2000–2022)
-      </p>
-      <div class="pt-2 text-cyan-400/80 font-mono text-[10px]">
-        Status: Data Cleaning Completed • Database & Dashboard In Progress
-      </div>
-    </div>
+  <!-- Footer -->
+  <footer class="mt-20 border-t border-slate-800/80 glass-card py-8 text-center text-xs text-slate-400 space-y-2">
+    <div>Obesity Data Analysis Project • Digital Egypt Pioneers Initiative (DEPI) • Professional Data Analytics Track</div>
+    <div class="text-cyan-400/80 font-mono">Team 1 (Group CLS GIZ5_DAT3_G1) • Egypt, Japan & USA Comparative Study</div>
   </footer>
 
-  <!-- JAVASCRIPT LOGIC -->
+  <!-- JavaScript for Interactive Tabs and Chart.js -->
   <script>
-    /* ======================================================
-       1. INTERACTIVE PARTICLE CANVAS BACKGROUND
-       ====================================================== */
+    // Workflow Tab Switcher
+    function switchWorkflowTab(tabId) {
+      // Hide all contents
+      document.querySelectorAll('.workflow-content').forEach(el => el.classList.add('hidden'));
+      // Reset all buttons styling
+      document.querySelectorAll('.workflow-tab-btn').forEach(btn => {
+        btn.classList.remove('ring-2', 'ring-cyan-500/30', 'border-cyan-500/50', 'bg-cyan-500/10');
+        btn.classList.add('border-slate-800', 'bg-slate-900/40');
+      });
+
+      // Show selected content
+      document.getElementById('content-' + tabId).classList.remove('hidden');
+      // Highlight selected button
+      const activeBtn = document.getElementById('tab-' + tabId);
+      activeBtn.classList.remove('border-slate-800', 'bg-slate-900/40');
+      activeBtn.classList.add('ring-2', 'ring-cyan-500/30', 'border-cyan-500/50', 'bg-cyan-500/10');
+    }
+
+    // Chart.js Initialization
+    const ctx = document.getElementById('trendsChart').getContext('2d');
+    
+    const chartDataSets = {
+      obesity: {
+        label: 'Adult Obesity Prevalence (%)',
+        egypt: [26.0, 27.2, 28.5, 30.1, 32.0, 33.5, 35.5],
+        japan: [3.2, 3.4, 3.6, 3.8, 4.1, 4.3, 4.5],
+        usa: [30.5, 31.8, 33.2, 35.0, 36.8, 38.5, 40.2],
+        years: ['2000', '2004', '2008', '2012', '2016', '2020', '2022']
+      },
+      diabetes: {
+        label: 'Adult Diabetes Prevalence (%)',
+        egypt: [10.2, 11.0, 12.1, 13.5, 14.8, 16.0, 16.8],
+        japan: [5.1, 5.3, 5.5, 5.7, 6.0, 6.2, 6.4],
+        usa: [8.5, 9.2, 10.1, 11.0, 12.0, 13.1, 13.8],
+        years: ['2000', '2004', '2008', '2012', '2016', '2020', '2022']
+      },
+      gdp: {
+        label: 'GDP Per Capita ($ PPP)',
+        egypt: [7500, 8400, 9600, 10800, 11500, 13000, 14200],
+        japan: [32000, 34500, 36800, 38100, 40500, 42000, 43500],
+        usa: [36000, 41000, 46000, 51000, 58000, 65000, 70200],
+        years: ['2000', '2004', '2008', '2012', '2016', '2020', '2022']
+      }
+    };
+
+    let currentMetric = 'obesity';
+
+    const trendsChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: chartDataSets.obesity.years,
+        datasets: [
+          {
+            label: 'Egypt',
+            data: chartDataSets.obesity.egypt,
+            borderColor: '#f39c12',
+            backgroundColor: 'rgba(243, 156, 18, 0.1)',
+            borderWidth: 3,
+            tension: 0.3,
+            fill: true
+          },
+          {
+            label: 'Japan',
+            data: chartDataSets.obesity.japan,
+            borderColor: '#00f2fe',
+            backgroundColor: 'rgba(0, 242, 254, 0.1)',
+            borderWidth: 3,
+            tension: 0.3,
+            fill: true
+          },
+          {
+            label: 'USA',
+            data: chartDataSets.obesity.usa,
+            borderColor: '#8e44ad',
+            backgroundColor: 'rgba(142, 68, 173, 0.1)',
+            borderWidth: 3,
+            tension: 0.3,
+            fill: true
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            display: false
+          }
+        },
+        scales: {
+          x: {
+            grid: {
+              color: 'rgba(255, 255, 255, 0.05)'
+            },
+            ticks: {
+              color: '#94a3b8'
+            }
+          },
+          y: {
+            grid: {
+              color: 'rgba(255, 255, 255, 0.05)'
+            },
+            ticks: {
+              color: '#94a3b8'
+            }
+          }
+        }
+      }
+    });
+
+    function updateChartMetric(metric) {
+      currentMetric = metric;
+      
+      // Update button active state
+      document.querySelectorAll('.chart-metric-btn').forEach(btn => {
+        btn.classList.remove('bg-cyan-500', 'text-slate-950', 'shadow-md');
+        btn.classList.add('bg-slate-800', 'text-slate-300', 'hover:bg-slate-700');
+      });
+      const activeBtn = document.getElementById('btn-' + metric);
+      activeBtn.classList.remove('bg-slate-800', 'text-slate-300', 'hover:bg-slate-700');
+      activeBtn.classList.add('bg-cyan-500', 'text-slate-950', 'shadow-md');
+
+      // Update chart data
+      const dataSet = chartDataSets[metric];
+      trendsChart.data.labels = dataSet.years;
+      trendsChart.data.datasets[0].data = dataSet.egypt;
+      trendsChart.data.datasets[1].data = dataSet.japan;
+      trendsChart.data.datasets[2].data = dataSet.usa;
+      trendsChart.data.datasets[0].label = 'Egypt (' + dataSet.label + ')';
+      trendsChart.data.datasets[1].label = 'Japan (' + dataSet.label + ')';
+      trendsChart.data.datasets[2].label = 'USA (' + dataSet.label + ')';
+      trendsChart.update();
+    }
+
+    // Particle Background Animation
     const canvas = document.getElementById('particleCanvas');
-    const ctx = canvas.getContext('2d');
+    const ctxCanvas = canvas.getContext('2d');
+
     let particlesArray = [];
+    const numberOfParticles = 50;
 
     function resizeCanvas() {
       canvas.width = window.innerWidth;
@@ -796,39 +843,37 @@ df_final.to_csv(<span class="text-emerald-300">'Cleaned Data/cleaned_obesity_ind
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
         this.size = Math.random() * 2 + 0.5;
-        this.speedX = Math.random() * 0.5 - 0.25;
-        this.speedY = Math.random() * 0.5 - 0.25;
-        this.color = Math.random() > 0.5 ? 'rgba(0, 242, 254, ' : 'rgba(79, 172, 254, ';
-        this.alpha = Math.random() * 0.4 + 0.1;
+        this.speedX = Math.random() * 0.6 - 0.3;
+        this.speedY = Math.random() * 0.6 - 0.3;
+        this.color = Math.random() > 0.5 ? 'rgba(0, 242, 254, 0.4)' : 'rgba(79, 172, 254, 0.3)';
       }
       update() {
         this.x += this.speedX;
         this.y += this.speedY;
 
         if (this.x > canvas.width) this.x = 0;
-        if (this.x < 0) this.x = canvas.width;
+        else if (this.x < 0) this.x = canvas.width;
         if (this.y > canvas.height) this.y = 0;
-        if (this.y < 0) this.y = canvas.height;
+        else if (this.y < 0) this.y = canvas.height;
       }
       draw() {
-        ctx.fillStyle = this.color + this.alpha + ')';
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fill();
+        ctxCanvas.fillStyle = this.color;
+        ctxCanvas.beginPath();
+        ctxCanvas.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctxCanvas.fill();
       }
     }
 
     function initParticles() {
       particlesArray = [];
-      const particleCount = Math.floor((canvas.width * canvas.height) / 18000);
-      for (let i = 0; i < particleCount; i++) {
+      for (let i = 0; i < numberOfParticles; i++) {
         particlesArray.push(new Particle());
       }
     }
     initParticles();
 
     function animateParticles() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctxCanvas.clearRect(0, 0, canvas.width, canvas.height);
       for (let i = 0; i < particlesArray.length; i++) {
         particlesArray[i].update();
         particlesArray[i].draw();
@@ -836,156 +881,6 @@ df_final.to_csv(<span class="text-emerald-300">'Cleaned Data/cleaned_obesity_ind
       requestAnimationFrame(animateParticles);
     }
     animateParticles();
-
-    /* ======================================================
-       2. WORKFLOW TAB SWITCHER
-       ====================================================== */
-    function switchWorkflowTab(tabId) {
-      // Hide all contents
-      const contents = document.querySelectorAll('.workflow-content');
-      contents.forEach(c => c.classList.add('hidden'));
-
-      // Remove active states from tab buttons
-      const tabs = document.querySelectorAll('.workflow-tab-btn');
-      tabs.forEach(t => {
-        t.classList.remove('ring-2', 'ring-cyan-500/30', 'border-cyan-500/50');
-      });
-
-      // Show target content
-      const targetContent = document.getElementById('content-' + tabId);
-      if (targetContent) targetContent.classList.remove('hidden');
-
-      // Highlight target tab button
-      const targetTab = document.getElementById('tab-' + tabId);
-      if (targetTab) {
-        targetTab.classList.add('ring-2', 'ring-cyan-500/30', 'border-cyan-500/50');
-      }
-    }
-
-    /* ======================================================
-       3. CHART.JS DATA TRENDS DEMO
-       ====================================================== */
-    const years = ['2000', '2004', '2008', '2012', '2016', '2020', '2022'];
-    
-    const datasetsConfig = {
-      obesity: {
-        title: 'Adult Obesity Prevalence (%)',
-        egypt: [18.5, 21.2, 24.8, 29.1, 33.5, 37.2, 38.0],
-        japan: [2.8, 3.1, 3.5, 3.8, 4.1, 4.3, 4.5],
-        usa: [30.5, 32.2, 34.0, 36.5, 39.8, 41.9, 42.4]
-      },
-      diabetes: {
-        title: 'Adult Diabetes Rate (%)',
-        egypt: [8.2, 9.1, 10.5, 12.0, 13.8, 15.2, 15.8],
-        japan: [6.1, 6.3, 6.5, 6.7, 7.0, 7.1, 7.2],
-        usa: [7.5, 8.4, 9.2, 10.1, 11.0, 11.8, 12.1]
-      },
-      gdp: {
-        title: 'GDP Per Capita PPP ($)',
-        egypt: [5200, 6100, 7800, 9200, 11000, 12800, 14200],
-        japan: [27500, 30200, 33800, 36500, 40100, 42200, 45500],
-        usa: [36400, 41700, 48400, 51600, 57900, 63500, 76300]
-      }
-    };
-
-    let trendsChart;
-
-    function renderChart(metricKey) {
-      const dataConfig = datasetsConfig[metricKey];
-      const ctxChart = document.getElementById('trendsChart').getContext('2d');
-
-      if (trendsChart) trendsChart.destroy();
-
-      trendsChart = new Chart(ctxChart, {
-        type: 'line',
-        data: {
-          labels: years,
-          datasets: [
-            {
-              label: 'Egypt',
-              data: dataConfig.egypt,
-              borderColor: '#f39c12',
-              backgroundColor: 'rgba(243, 156, 18, 0.15)',
-              borderWidth: 3,
-              tension: 0.3,
-              fill: true,
-              pointRadius: 4,
-              pointHoverRadius: 7
-            },
-            {
-              label: 'Japan',
-              data: dataConfig.japan,
-              borderColor: '#00f2fe',
-              backgroundColor: 'rgba(0, 242, 254, 0.15)',
-              borderWidth: 3,
-              tension: 0.3,
-              fill: true,
-              pointRadius: 4,
-              pointHoverRadius: 7
-            },
-            {
-              label: 'United States',
-              data: dataConfig.usa,
-              borderColor: '#8e44ad',
-              backgroundColor: 'rgba(142, 68, 173, 0.15)',
-              borderWidth: 3,
-              tension: 0.3,
-              fill: true,
-              pointRadius: 4,
-              pointHoverRadius: 7
-            }
-          ]
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          plugins: {
-            legend: {
-              display: false
-            },
-            tooltip: {
-              backgroundColor: 'rgba(15, 23, 42, 0.9)',
-              titleColor: '#00f2fe',
-              bodyColor: '#f8fafc',
-              borderColor: 'rgba(0, 242, 254, 0.3)',
-              borderWidth: 1,
-              padding: 12,
-              displayColors: true
-            }
-          },
-          scales: {
-            x: {
-              grid: { color: 'rgba(255, 255, 255, 0.05)' },
-              ticks: { color: '#94a3b8', font: { family: 'monospace' } }
-            },
-            y: {
-              grid: { color: 'rgba(255, 255, 255, 0.05)' },
-              ticks: { color: '#94a3b8', font: { family: 'monospace' } }
-            }
-          }
-        }
-      });
-    }
-
-    function updateChartMetric(metricKey) {
-      // Toggle button styling
-      const btns = document.querySelectorAll('.chart-metric-btn');
-      btns.forEach(b => {
-        b.className = "chart-metric-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition-all";
-      });
-
-      const activeBtn = document.getElementById('btn-' + metricKey);
-      if (activeBtn) {
-        activeBtn.className = "chart-metric-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-cyan-500 text-slate-950 shadow-md transition-all font-bold";
-      }
-
-      renderChart(metricKey);
-    }
-
-    // Initialize Chart on Window Load
-    window.onload = function() {
-      renderChart('obesity');
-    };
   </script>
 </body>
 </html>
