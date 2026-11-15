@@ -19,11 +19,11 @@
   </a> 
   &nbsp;<b>➔</b>&nbsp;
   <a href="PYTHON_README.md">
-    <img src="https://img.shields.io/badge/3._Python-In_Progress-F39C12?style=for-the-badge&logo=postgresql&logoColor=white" alt="Python Cleaning">
+    <img src="https://img.shields.io/badge/3._Python-Done-27AE60?style=for-the-badge&logo=postgresql&logoColor=white" alt="Python Cleaning">
   </a> 
   &nbsp;<b>➔</b>&nbsp;
   <a href="SQL_README.md">
-    <img src="https://img.shields.io/badge/3._SQL-In_Progress-F39C12?style=for-the-badge&logo=postgresql&logoColor=white" alt="SQL Database">
+    <img src="https://img.shields.io/badge/3._SQL-Done-27AE60?style=for-the-badge&logo=postgresql&logoColor=white" alt="SQL Database">
   </a> 
   &nbsp;<b>➔</b>&nbsp;
   <a href="DASHBOARD_README.md">
