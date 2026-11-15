@@ -1,0 +1,245 @@
+# 🧹 Data Cleaning & ETL Pipeline (Python / Pandas)
+
+This section documents the **Data Wrangling, Auditing, and Standardization** workflow executed using **Python (`pandas`)** to transform four raw, heterogeneous global health and macroeconomic datasets into clean, relational-ready tables for **Egypt, Japan, and the United States (2000–2022)**.
+
+---
+
+## 📊 Before vs. After Cleaning Overview
+
+![Data Cleaning Before and After Comparison](assets/data_cleaning_comparison.png)
+
+> **Pipeline Impact Summary:**
+> * **Row Reduction & Scoping:** Filtered **66,972** raw global records down to **483** highly targeted analytical rows (`138` rows per health table + `69` rows for economic indicators).
+> * **Schema Alignment:** Unified disparate naming conventions (`SpatialDimValueCode`, `Period`, `Dim1`) into standardized SQL join keys (`Country`, `Country_Code`, `Year`, `Sex`).
+> * **Zero Data Gaps:** Verified **0 missing values** and **0 duplicate records** across the entire 23-year longitudinal window.
+
+---
+
+## 🛠️ Step-by-Step Pipeline Breakdown
+
+### Step 1: Data Ingestion & Initial Profiling
+Loads the four raw CSV datasets (NCD-RisC Diabetes, NCD-RisC Obesity, WHO Physical Inactivity, and Macroeconomic Health Indicators) and inspects their initial dimensions (`rows × columns`) to establish a baseline before transformation.
+
+```python
+import pandas as pd
+
+# 1. Load raw 4 datasets
+df_diabetes = pd.read_csv('Diabetes Dataset – NCD-RisC.csv')
+df_obesity = pd.read_csv('Obesity Dataset – NCD-RisC.csv')
+df_inactivity = pd.read_csv('Physical Inactivity.csv')
+df_economic = pd.read_csv('economic_health_indicators_egypt_japan_usa_2000_2022.csv')
+
+# Check row and column counts
+print(f"Diabetes shape: {df_diabetes.shape}")
+print(f"Obesity shape: {df_obesity.shape}")
+print(f"Physical Inactivity shape: {df_inactivity.shape}")
+print(f"Economic Indicators shape: {df_economic.shape}")
+
+```
+
+**Output:**
+
+```text
+Diabetes shape: (13200, 11)
+Obesity shape: (13200, 34)
+Physical Inactivity shape: (40503, 34)
+Economic Indicators shape: (69, 5)
+
+```
+
+---
+
+### Step 2: Data Quality Audit (Duplicates & Missing Values)
+
+Performs an automated quality check across all tables to detect exact duplicate records and isolate null values. Notably, this step identifies **11 completely empty metadata columns** (`40,503` nulls each) inside the raw WHO Physical Inactivity dataset (such as `Dim3` and `FactComments`) scheduled for removal.
+
+```python
+# 2. Null & duplicate checks
+print("Duplicate rows:")
+print("Diabetes:", df_diabetes.duplicated().sum())
+print("Obesity:", df_obesity.duplicated().sum())
+print("Inactivity:", df_inactivity.duplicated().sum())
+print("Economic:", df_economic.duplicated().sum())
+
+print("\nNull values per dataset:")
+print("Diabetes total nulls:", df_diabetes.isnull().sum().sum())
+print("Obesity total nulls:", df_obesity.isnull().sum().sum())
+print("Economic total nulls:", df_economic.isnull().sum().sum())
+
+# Inspect column-level nulls for WHO Physical Inactivity
+inctv_nulls = df_inactivity.isnull().sum()
+print("\nInactivity columns with nulls:")
+print(inctv_nulls[inctv_nulls > 0])
+
+```
+
+---
+
+### Step 3: Scope Filtering, Schema Standardization & Harmonization
+
+Applies business logic and relational modeling rules across all four datasets:
+
+* **Geographic & Temporal Scoping:** Filters records strictly to **Egypt (`EGY`)**, **Japan (`JPN`)**, and the **United States (`USA`)** between **2000 and 2022**.
+* **Column Renaming:** Converts verbose survey headers and WHO codes into clean, consistent snake/title-case column names (`Country`, `Country_Code`, `Year`, `Sex`) to enable seamless **SQL Server Star Schema** joins.
+* **Demographic Harmonization:** Filters WHO Physical Inactivity to adults (`18+`) and maps `Male`/`Female` labels to `Men`/`Women` (excluding `Both sexes`) so every health table shares the exact same **138-row grain** (`3 countries × 23 years × 2 sexes`).
+
+```python
+# 3. Standardization & scope filtering
+countries = ['EGY', 'JPN', 'USA']
+country_names = {'EGY': 'Egypt', 'JPN': 'Japan', 'USA': 'United States'}
+
+# --- 1. Clean Diabetes Data ---
+df_diabetes_clean = df_diabetes[
+    (df_diabetes['ISO'].isin(countries)) &
+    (df_diabetes['Year'].between(2000, 2022))
+].copy()
+
+df_diabetes_clean = df_diabetes_clean.rename(columns={
+    'Country/Region/World': 'Country',
+    'ISO': 'Country_Code',
+    'Prevalence of diabetes (18+ years)': 'Diabetes_Prevalence',
+    'Prevalence of diabetes (18+ years) lower 95% uncertainty interval': 'Diabetes_Lower_95_UI',
+    'Prevalence of diabetes (18+ years) upper 95% uncertainty interval': 'Diabetes_Upper_95_UI',
+    'Proportion of people with diabetes who were treated (30+ years)': 'Diabetes_Treatment_Coverage'
+})
+df_diabetes_clean['Country'] = df_diabetes_clean['Country_Code'].map(country_names)
+df_diabetes_clean = df_diabetes_clean[[
+    'Country', 'Country_Code', 'Year', 'Sex',
+    'Diabetes_Prevalence', 'Diabetes_Lower_95_UI', 'Diabetes_Upper_95_UI', 'Diabetes_Treatment_Coverage'
+]].sort_values(['Country_Code', 'Year', 'Sex']).reset_index(drop=True)
+
+# --- 2. Clean Obesity Data ---
+df_obesity_clean = df_obesity[
+    (df_obesity['ISO'].isin(countries)) &
+    (df_obesity['Year'].between(2000, 2022))
+].copy()
+
+df_obesity_clean = df_obesity_clean.rename(columns={
+    'Country/Region/World': 'Country',
+    'ISO': 'Country_Code',
+    'Prevalence of BMI<18.5 kg/m² (underweight)': 'Underweight_Prevalence',
+    'Prevalence of BMI 25 kg/m² to <30 kg/m²': 'Overweight_Prevalence',
+    'Prevalence of BMI>=30 kg/m² (obesity)': 'Obesity_Prevalence',
+    'Prevalence of BMI>=30 kg/m² (obesity) lower 95% uncertainty interval': 'Obesity_Lower_95_UI',
+    'Prevalence of BMI>=30 kg/m² (obesity) upper 95% uncertainty interval': 'Obesity_Upper_95_UI',
+    'Prevalence of BMI 30 kg/m² to <35 kg/m²': 'Obesity_Class_1',
+    'Prevalence of BMI 35 kg/m² to <40 kg/m²': 'Obesity_Class_2',
+    'Prevalence of BMI >=40 kg/m² (morbid obesity)': 'Morbid_Obesity_Class_3'
+})
+df_obesity_clean['Country'] = df_obesity_clean['Country_Code'].map(country_names)
+df_obesity_clean = df_obesity_clean[[
+    'Country', 'Country_Code', 'Year', 'Sex',
+    'Underweight_Prevalence', 'Overweight_Prevalence',
+    'Obesity_Prevalence', 'Obesity_Lower_95_UI', 'Obesity_Upper_95_UI',
+    'Obesity_Class_1', 'Obesity_Class_2', 'Morbid_Obesity_Class_3'
+]].sort_values(['Country_Code', 'Year', 'Sex']).reset_index(drop=True)
+
+# --- 3. Clean Physical Inactivity Data ---
+df_inactivity_clean = df_inactivity[
+    (df_inactivity['SpatialDimValueCode'].isin(countries)) &
+    (df_inactivity['Period'].between(2000, 2022)) &
+    (df_inactivity['Dim2'].str.startswith('18+', na=False)) &
+    (df_inactivity['Dim1'].isin(['Male', 'Female']))
+].copy()
+
+df_inactivity_clean = df_inactivity_clean.rename(columns={
+    'Location': 'Country',
+    'SpatialDimValueCode': 'Country_Code',
+    'Period': 'Year',
+    'Dim1': 'Sex',
+    'FactValueNumeric': 'Physical_Inactivity_Prevalence',
+    'FactValueNumericLow': 'Physical_Inactivity_Lower_95_UI',
+    'FactValueNumericHigh': 'Physical_Inactivity_Upper_95_UI'
+})
+df_inactivity_clean['Country'] = df_inactivity_clean['Country_Code'].map(country_names)
+df_inactivity_clean['Sex'] = df_inactivity_clean['Sex'].replace({'Male': 'Men', 'Female': 'Women'})
+df_inactivity_clean = df_inactivity_clean[[
+    'Country', 'Country_Code', 'Year', 'Sex',
+    'Physical_Inactivity_Prevalence', 'Physical_Inactivity_Lower_95_UI', 'Physical_Inactivity_Upper_95_UI'
+]].sort_values(['Country_Code', 'Year', 'Sex']).reset_index(drop=True)
+
+# --- 4. Clean Economic Data ---
+df_economic_clean = df_economic[
+    (df_economic['Country_Code'].isin(countries)) &
+    (df_economic['Year'].between(2000, 2022))
+].copy()
+df_economic_clean['Country'] = df_economic_clean['Country_Code'].map(country_names)
+df_economic_clean = df_economic_clean.sort_values(['Country_Code', 'Year']).reset_index(drop=True)
+
+```
+
+**Output:**
+
+```text
+Cleaned Shapes & Null Counts:
+Diabetes: (138, 8) | Nulls: 0
+Obesity: (138, 12) | Nulls: 0
+Inactivity: (138, 7) | Nulls: 0
+Economic: (69, 5) | Nulls: 0
+
+```
+
+---
+
+### Step 4: Longitudinal Completeness Verification
+
+Validates time-series continuity across every `(Country, Sex)` subgroup using Python set subtraction (`expected_years - actual_years`). This confirms that all four datasets align across the shared **2000–2022** window with zero missing years.
+
+```python
+# 4. Check year coverage and make sure no years are missing
+expected_years = set(range(2000, 2023))
+
+for name, df in [('Diabetes', df_diabetes_clean), ('Obesity', df_obesity_clean), ('Inactivity', df_inactivity_clean)]:
+    missing_found = False
+    for code in countries:
+        for sex in df['Sex'].unique():
+            sub = df[(df['Country_Code'] == code) & (df['Sex'] == sex)]
+            missing = sorted(list(expected_years - set(sub['Year'])))
+            if missing:
+                missing_found = True
+                print(f"{name} - {code} ({sex}) missing years:", missing)
+    if not missing_found:
+        print(f"{name}: Complete (0 missing years for all countries and sexes)")
+
+```
+
+---
+
+### Step 5: Data Export & SQL Server Warehouse Ingestion
+
+Exports the cleaned tables into structured Excel files (`.xlsx`) for local backup and BI prototyping, while providing a direct `SQLAlchemy` + `pyodbc` pipeline to load the tables into the **SQL Server Data Warehouse**.
+
+```python
+# 5. Export cleaned datasets
+df_obesity_clean.to_excel('obesity.xlsx', index=False)
+df_diabetes_clean.to_excel('diabetes.xlsx', index=False)
+df_inactivity_clean.to_excel('physical_inactivity.xlsx', index=False)
+df_economic_clean.to_excel('economic_health_indicators.xlsx', index=False)
+
+# Optional: Direct ingestion into SQL Server Data Warehouse
+# engine = sal.create_engine('mssql+pyodbc://username:password@SERVER_NAME/DatabaseName?driver=ODBC+Driver+17+for+SQL+Server')
+# df_diabetes_clean.to_sql('Diabetes_Data', con=engine, index=False, if_exists='replace')
+
+```
+
+```
+
+---
+
+### 🎨 دليل تصميم الصورة (Before vs. After Cleaning)
+
+لجعل الصورة احترافية وتعكس المجهود الهندسي الذي قمت به، صممها مقسمة إلى نصفين متقابلين (**Left: Raw Data ❌** و **Right: Clean Data ✅**) وبنفس ألوان الداشبورد الداكنة (`#0e1117`)، وضع بداخلها العناصر التالية:
+
+1. **الجزء الأيسر (Before Cleaning - Raw State):**
+   * **حجم البيانات الخام:** اكتب أرقام الصفوف والأعمدة الضخمة (`40,503 rows × 34 cols` لملف النشاط البدني، و `13,200 rows` للسمنة والسكري).
+   * **أمثلة على الأعمدة الفوضوية:** لقطة شاشة (Screenshot) صغيرة لأعمدة WHO غير المفهومة مثل `SpatialDimValueCode`, `Dim1`, `Dim2`, `Dim3` وأعمدة NCD-RisC الطويلة جداً مثل `Prevalence of BMI>=30 kg/m² (obesity) lower 95% uncertainty interval`.
+   * **المشاكل المكتشفة:** علامة تحذير توضح وجود **11 عمود فارغ بالكامل (Nulls)**، واختلاف السنوات (بعضها يبدأ من 1990 وبعضها من 2000)، واختلاف مسميات النوع (`Male/Female` مقابل `Men/Women`).
+
+2. **الجزء الأيمن (After Cleaning - Warehouse Ready):**
+   * **حجم البيانات النظيفة:** الأرقام النهائية المتطابقة (`138 rows` لكل جدول صحي × `23 سنة` × `3 دول`، و `0 Nulls`).
+   * **أمثلة على الأعمدة الموحدة:** لقطة شاشة للجدول النظيف بعد التصدير يظهر فيه توحيد المفاتيح (`Country`, `Country_Code`, `Year`, `Sex`) وأسماء المؤشرات الواضحة (`Obesity_Prevalence`, `Obesity_Class_1`, `Physical_Inactivity_Prevalence`).
+   * **النتيجة النهائية:** سهم يشير إلى جاهزية الجداول للربط المباشر في **SQL Server Star Schema** و **Power BI**.
+
+*(ملاحظة: احفظ الصورة داخل مجلد باسم `assets` في المستودع باسم `data_cleaning_comparison.png` لكي تظهر تلقائياً في الكود أعلاه).*
+
+```
